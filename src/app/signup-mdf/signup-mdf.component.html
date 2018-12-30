@@ -1,0 +1,65 @@
+<form [formGroup]="signup" (ngSubmit)="onSubmitModelBased()">
+  <table class="table">
+    <tr>
+      <td>
+        <label>First Name</label>
+      </td>
+      <td>
+        <input type="text" formControlName="fname">
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <label>Last Name</label>
+      </td>
+      <td>
+        <input type="text" formControlName="lname">
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <label>Mobile Number</label>
+      </td>
+      <td>
+        <input type="text" formControlName="mobile">
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <label>Email Address</label>
+      </td>
+      <td>
+        <input type="text" formControlName="email">
+      </td>
+    </tr><tr>
+      <td>
+        <label>Date of Birth</label>
+      </td>
+      <td>
+        <input type="text" formControlName="dob">
+      </td>
+    </tr><tr>
+      <td>
+        <label>Password</label>
+      </td>
+      <td>
+        <input type="password" formControlName="password">
+      </td>
+    </tr><tr>
+      <td>
+        <label>Confirm Password</label>
+      </td>
+      <td>
+        <input type="password"formControlName="cpassword">
+      </td>
+    </tr>
+    <tr class="text-center">
+      <td colspan="2">
+        <button class="center-block" mat-raised-button color="primary" type="submit" [disabled]="!signup.valid">Login</button>
+        &nbsp;&nbsp;
+        <button type="button" class="mat-stroked-button" (click)="closeBtn()">Close</button>
+     </td> 
+   </tr>
+  </table>
+
+</form>

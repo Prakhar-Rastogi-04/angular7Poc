@@ -1,0 +1,9 @@
+function Person(fname, lname) {
+    this.first = fname;
+    this.last = lname
+};
+Person.prototype.fname = function() {
+    return this.first+' '+this.last
+}
+var prakhar = new Person('prakhar', 'rastogi')
+console.log(prakhar)

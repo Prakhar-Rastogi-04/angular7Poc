@@ -1,0 +1,29 @@
+<section>
+  <form #login="ngForm" (ngSubmit)="loginSubmit()">
+    <table class="table table-borderless">
+      <tr>
+        <td><label>Username or Email </label></td>
+        <td>
+          <input type="text" name="userName" required [(ngModel)]="user.userName" #userName="ngModel">
+          <br><span class="help-block" *ngIf="userName.errors?.required && userName.touched">*Username is required</span>
+        </td>
+      </tr>
+      <tr>
+          <td><label>Password </label></td>
+          <td>
+            <input type="password" name="password" required [(ngModel)]="user.password" #userPass = "ngModel">
+            <br><span class="help-block" *ngIf="userPass.errors?.required && userPass.touched">*Password is required</span>
+            
+          </td>
+      </tr>
+      <tr class="text-center">
+         <td colspan="2">
+           <button class="center-block" mat-raised-button color="primary" type="submit" [disabled]="!login.valid">Login</button>
+           &nbsp;&nbsp;
+           <button type="button" class="mat-stroked-button" (click)="closeBtn()">Close</button>
+        </td> 
+      </tr>
+    </table>
+   
+  </form>
+</section>
