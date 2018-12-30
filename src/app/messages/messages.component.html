@@ -1,3 +1,20 @@
-<p>
-  messages works!
-</p>
+<div>
+  <mat-grid-list cols="2" rowHeight="2:2.5">
+    <mat-grid-tile *ngFor="let block of msgData">
+      <app-message-cards (click)="showConfig()" 
+      [avatar]="block.Avatar" 
+      [title]="block.title"
+      [contentAlt]="block.contentAlt"
+      [contentType]="block.contentType"
+      [contentUrl]="block.contentUrl"
+      [likes]="block.likes"
+      [shares]="block.shares"
+      [postTime]="block.postTime"
+      [textContent]="block.textContent">
+    </app-message-cards>
+    </mat-grid-tile>
+  </mat-grid-list>
+  <div class="fullWidth text-center"><a href="javascript:void(0)" (click)="loadMore()">Show More</a></div>
+</div>
+
+

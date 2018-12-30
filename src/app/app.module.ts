@@ -38,6 +38,7 @@ import { SettingsComponent } from './settings/settings.component';
 import { NotificationsComponent } from './notifications/notifications.component';
 import { LibraryComponent } from './library/library.component';
 import { MessagesComponent } from './messages/messages.component';
+import { MessageCardsComponent } from './message-cards/message-cards.component';
 
 
 
@@ -71,7 +72,8 @@ import { MessagesComponent } from './messages/messages.component';
     SettingsComponent,
     NotificationsComponent,
     LibraryComponent,
-    MessagesComponent
+    MessagesComponent,
+    MessageCardsComponent
     
   ],
   imports: [
