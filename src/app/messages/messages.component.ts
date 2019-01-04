@@ -10,17 +10,17 @@ export interface Config {
   heroesUrl: string;
   textfile: string;
 }
-export interface MsgData {
-  title: string;
-  Avatar: string;
-  contentAlt: string;
-  contentType: string;
-  contentUrl: string;
-  likes: number;
-  postTime: string;
-  shares: string;
-  textContent : string;
-}
+// export interface MsgData {
+//   title: string;
+//   Avatar: string;
+//   contentAlt: string;
+//   contentType: string;
+//   contentUrl: string;
+//   likes: number;
+//   postTime: string;
+//   shares: string;
+//   textContent : string;
+// }
 @Component({
   selector: 'app-messages',
   templateUrl: './messages.component.html',
@@ -36,27 +36,32 @@ export class MessagesComponent implements OnInit {
     {text: 'Three'},
     {text: 'Four'}
   ];
-  msgData : MsgData;
+ // msgData : MsgData;
   config : Config;
-  jsonData: MsgData;
-  newObj: MsgData
+  msgData:Object;
+//  jsonData: MsgData;
+ // newObj: MsgData
   constructor(private msgService : MessageServiceService ) { }
   showConfig() {
     this.msgService.getConfig()
-    .subscribe((data: MsgData) => {
+    .subscribe((data) => {
       console.log(data);
       this.msgData = data;
     });
   }
   loadMore() {
     // let a = this.msgService.loadMore();
-    this.msgService.getConfig()
-    .subscribe((data: MsgData) => {
+    this.msgService.loadMore()
+    .subscribe((data) => {
       console.log(data);
+      this.msgData = data;
     });
   }
   ngOnInit() {
     this.showConfig();
+    if(this.msgData) {
+
+    }
   }
 
 }
